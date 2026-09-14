@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>不用 IP 也能做流量｜2026 SALON CONTENT SYSTEM</title>
+  <meta name="description" content="一日團隊實戰班：5 小時教會後配口播完整流程，幫整家店建立會做內容的 SOP。" />
+  <meta property="og:title" content="不用 IP 也能做流量｜一日團隊實戰班" />
+  <meta property="og:description" content="不是教大家當網紅，是整家店會做內容。" />
+  <meta property="og:type" content="website" />
+  <link rel="preload" as="image" href="assets/simon-portrait.webp" type="image/webp" fetchpriority="high" />
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --ink-soft: #383830;
+      --paper: #f0f0e8;
+      --sand: #e0e0c8;
+      --sand-deep: #d4d4b8;
+      --olive: #849662;
+      --olive-dark: #6f8150;
+      --muted: #5c5c52;
+      --white: #ffffff;
+      --max: 920px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", "PingFang TC", "Hiragino Sans GB", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    .recs { content-visibility: auto; contain-intrinsic-size: 1200px; }
+    .rec-card img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #111; }
+    a { color: inherit; }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing: 0.08em;
+    }
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+    }
+
+    /* Header */
+    .hero {
+      background: var(--ink);
+      color: var(--white);
+      padding: 1.25rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .logo {
+      background: var(--white);
+      padding: 0.35rem 0.55rem;
+      width: 118px;
+    }
+    .logo img { width: 100%; height: auto; }
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.72);
+      text-transform: uppercase;
+    }
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: end;
+    }
+    @media (min-width: 800px) {
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; }
+      .hero { padding: 1.5rem 0 4rem; }
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 0.85rem 0 1.25rem;
+    }
+    .hero h1 .ip { color: var(--olive); }
+    .hero-lead {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.05rem;
+      max-width: 34rem;
+    }
+    .hero-lead strong {
+      display: block;
+      margin-top: 0.85rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+    .hero-note {
+      margin-top: 1.35rem;
+      padding-left: 0.9rem;
+      border-left: 3px solid var(--olive);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .portrait {
+      border-radius: 0;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 4/5;
+      max-width: 360px;
+      margin-inline: auto;
+      filter: grayscale(1) contrast(1.08);
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 70% 40%;
+    }
+
+    /* Sections */
+    section { padding: 3.25rem 0; }
+    .sec-title {
+      font-size: clamp(1.55rem, 4vw, 2.1rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .pain { background: var(--sand); }
+    .pain-grid {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .pain-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .pain-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .pain-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.1rem 1.15rem 1.2rem;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+    }
+    .badge {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: var(--olive);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .pain-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+    }
+    .pain-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .pain-foot {
+      margin-top: 1.35rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+
+    .callout {
+      background: var(--ink-soft);
+      color: var(--white);
+      padding: 2.4rem 0;
+    }
+    .callout p {
+      font-size: clamp(1.2rem, 3.2vw, 1.65rem);
+      font-weight: 800;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      max-width: 42rem;
+    }
+    .callout .hl { color: var(--olive); }
+
+    .method { background: var(--sand); }
+    .steps { display: grid; gap: 0.75rem; }
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.9rem;
+      align-items: start;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(26,26,24,0.08);
+      border-radius: 12px;
+      padding: 0.95rem 1rem;
+    }
+    .step-num {
+      width: 2.55rem;
+      height: 2.55rem;
+      border-radius: 999px;
+      background: var(--olive);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      line-height: 1.1;
+      text-align: center;
+    }
+    .step h3 { font-size: 1.02rem; font-weight: 800; }
+    .step p { font-size: 0.9rem; color: var(--muted); margin-top: 0.2rem; }
+
+    .compare { background: var(--paper); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      padding: 0.95rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(26,26,24,0.1);
+      vertical-align: top;
+    }
+    thead th:first-child { background: var(--ink); color: var(--white); width: 22%; }
+    thead th:nth-child(2) { background: #4a4a44; color: var(--white); }
+    thead th:nth-child(3) { background: var(--olive); color: var(--white); }
+    tbody tr:nth-child(even) { background: rgba(224,224,200,0.35); }
+    tbody th {
+      font-weight: 700;
+      color: var(--muted);
+      background: rgba(255,255,255,0.7);
+      width: 22%;
+    }
+    .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid rgba(26,26,24,0.1); }
+
+    .details { background: var(--sand); }
+    .detail-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 760px) {
+      .detail-grid { grid-template-columns: 1.15fr 0.85fr; }
+    }
+    .card {
+      border-radius: 16px;
+      padding: 1.4rem 1.35rem 1.5rem;
+    }
+    .card-dark {
+      background: var(--ink);
+      color: var(--white);
+    }
+    .card-light {
+      background: var(--white);
+      border: 1px solid rgba(26,26,24,0.08);
+    }
+    .pill {
+      display: inline-block;
+      background: var(--olive);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      margin: 0.85rem 0 1rem;
+    }
+    .checks { list-style: none; display: grid; gap: 0.65rem; }
+    .checks li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.55rem;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    .checks .tick {
+      color: var(--olive);
+      font-weight: 900;
+    }
+    .card-light h3 { margin-bottom: 1rem; }
+    .who { display: grid; gap: 0.85rem; }
+    .who-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.7rem;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(26,26,24,0.08);
+    }
+    .who-item:last-child { border-bottom: 0; }
+    .who-ico {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 999px;
+      background: rgba(132,150,98,0.18);
+      color: var(--olive-dark);
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .pricing {
+      background: #ececd8;
+      padding-bottom: 4rem;
+    }
+    .price-box {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 1.5rem 1.35rem 1.6rem;
+      border: 1px solid rgba(26,26,24,0.08);
+    }
+    .tiers {
+      margin: 1.1rem 0 1.2rem;
+      border-top: 1px solid rgba(26,26,24,0.12);
+      border-bottom: 1px solid rgba(26,26,24,0.12);
+    }
+    .tier {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0.5rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(26,26,24,0.08);
+      font-size: 0.98rem;
+    }
+    .tier:last-child { border-bottom: 0; }
+    .tier strong { font-weight: 800; }
+    .includes {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.25rem;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.95rem 1.25rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .cta:hover { background: var(--olive-dark); transform: translateY(-1px); }
+    .cta-note {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.55);
+      padding: 1.25rem 0;
+      font-size: 0.78rem;
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Recommendations */
+    .recs {
+      background: var(--ink);
+      color: var(--white);
+      padding: 3.5rem 0 2.5rem;
+    }
+    .recs .eyebrow {
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.65rem;
+    }
+    .recs .sec-title {
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .recs-lead {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.95rem;
+      max-width: 28rem;
+      margin-bottom: 1.75rem;
+    }
+    .recs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+    @media (min-width: 640px) {
+      .recs-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    }
+    @media (min-width: 900px) {
+      .recs-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .rec-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #000;
+      border-radius: 4px;
+    }
+    .rec-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .rec-card:hover img { transform: scale(1.03); }
+
+    /* Bottom CTA */
+    .bottom-cta {
+      background: var(--sand);
+      padding: 3rem 0 3.5rem;
+    }
+    .cta-block {
+      background: var(--white);
+      border: 1px solid rgba(26,26,24,0.08);
+      border-radius: 18px;
+      padding: 1.75rem 1.4rem 1.85rem;
+      text-align: center;
+    }
+    .cta-block h2 {
+      font-size: clamp(1.45rem, 3.8vw, 1.95rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 0.55rem;
+    }
+    .cta-block p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.35rem;
+    }
+    .cta-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--olive);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 1rem 1.6rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, transform 0.15s ease;
+      min-width: 12rem;
+    }
+    .cta-line:hover { background: var(--olive-dark); transform: translateY(-1px); }
+    .cta-line-note {
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <a class="logo" href="https://www.wpicked.com/" aria-label="W.PICKED">
+          <img src="assets/w-picked-logo.webp" alt="W.PICKED" width="132" height="41" decoding="async" />
+        </a>
+        <p class="eyebrow mono">2026 SALON CONTENT SYSTEM｜一日團隊實戰班</p>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <h1>不用 <span class="ip">IP</span> 也能做流量</h1>
+          <p class="hero-lead">
+            5 個小時，教會團隊如何快速完成後配口播：從文案、錄音到拍攝的完整流程。
+            <strong>幫團隊建立「會做自媒體」的 SOP。</strong>
+          </p>
+          <p class="hero-note">不是教大家當網紅，是整家店會做內容。</p>
+        </div>
+        <div class="portrait" aria-hidden="false">
+          <img src="assets/simon-portrait.webp" alt="講師魏子淵 Simon Wei" width="640" height="960" fetchpriority="high" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="pain">
+    <div class="wrap">
+      <h2 class="sec-title">如果你也卡在這裡</h2>
+      <div class="pain-grid">
+        <article class="pain-card">
+          <div class="badge mono">01</div>
+          <h3>不想面對鏡頭講話</h3>
+          <p>多數人不擅長鏡頭口播，一想到上鏡就卡住。</p>
+        </article>
+        <article class="pain-card">
+          <div class="badge mono">02</div>
+          <h3>不知道要拍什麼</h3>
+          <p>每天想題材，最後還是沒有開始。</p>
+        </article>
+        <article class="pain-card">
+          <div class="badge mono">03</div>
+          <h3>沒有話語權</h3>
+          <p>專業很好，卻不知道怎麼說給消費者聽。</p>
+        </article>
+        <article class="pain-card">
+          <div class="badge mono">04</div>
+          <h3>內容效率差</h3>
+          <p>花很多時間拍，卻沒有穩定可複製的流程。</p>
+        </article>
+        <article class="pain-card">
+          <div class="badge mono">05</div>
+          <h3>客人不想上鏡</h3>
+          <p>沒有模特兒，也不知道還能拍什麼。</p>
+        </article>
+        <article class="pain-card">
+          <div class="badge mono">06</div>
+          <h3>觀看互動次數差</h3>
+          <p>發了影片，卻沒有停留、分享與詢問。</p>
+        </article>
+      </div>
+      <p class="pain-foot">這堂課，就是幫團隊把以上卡點，收成一套做得出來的 SOP。</p>
+    </div>
+  </section>
+
+  <section class="callout">
+    <div class="wrap">
+      <p>公司不需要 20 個 IP。但公司需要一群<span class="hl">會製造內容的人</span>——以及一套大家跟得上的 <span class="hl">SOP</span>。</p>
+    </div>
+  </section>
+
+  <section class="method">
+    <div class="wrap">
+      <h2 class="sec-title">你需要的不是更多影片，而是一套會做內容的方法</h2>
+      <div class="steps">
+        <article class="step">
+          <div class="step-num mono">STEP<br />01</div>
+          <div>
+            <h3>找到目標</h3>
+            <p>先決定這階段要推的主題與成果，不一開始就亂拍。</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num mono">STEP<br />02</div>
+          <div>
+            <h3>抓出消費者痛點與解法</h3>
+            <p>不先問今天拍什麼，先問對方在煩惱什麼。</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num mono">STEP<br />03</div>
+          <div>
+            <h3>AI 文案模板直接套用</h3>
+            <p>用可複製骨架，把 Hook、問題、解法、CTA 一次寫完。</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num mono">STEP<br />04</div>
+          <div>
+            <h3>後製聲音錄製（後配口播）</h3>
+            <p>不上鏡也能把觀點講清楚，降低全店參與門檻。</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num mono">STEP<br />05</div>
+          <div>
+            <h3>拍攝分鏡清單（Shot List）</h3>
+            <p>先決定畫面再拍，減少廢片、加快現場節奏。</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num mono">STEP<br />06</div>
+          <div>
+            <h3>現場拍攝 → 後製剪輯 → 發布</h3>
+            <p>把流程跑完，當天完成可發布的一支片。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare">
+    <div class="wrap">
+      <h2 class="sec-title">鏡頭口播，不是每一個人都必須擅長</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="mono">比較</th>
+              <th>鏡頭口播</th>
+              <th>後配口播 + SOP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>核心</th>
+              <td>人是內容主體</td>
+              <td>題材與流程是主體</td>
+            </tr>
+            <tr>
+              <th>門檻</th>
+              <td>高</td>
+              <td>較低、可複製</td>
+            </tr>
+            <tr>
+              <th>適合</th>
+              <td>個人 IP</td>
+              <td>團隊內容系統</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="wrap">
+      <div class="detail-grid">
+        <article class="card card-dark">
+          <h2 class="sec-title" style="color:#fff;margin-bottom:0;">不是再聽一堂短影音課，是把 Content System 建起來</h2>
+          <div class="pill mono">5 小時｜12:00–17:00｜現場做出一支影片</div>
+          <ul class="checks">
+            <li><span class="tick">✓</span><span>手把手帶做：找題、文案、拍攝到後配</span></li>
+            <li><span class="tick">✓</span><span>當天產出：現場完成可發布的一支片</span></li>
+            <li><span class="tick">✓</span><span>帶走 SOP：題庫、模板與團隊流程</span></li>
+          </ul>
+        </article>
+        <article class="card card-light">
+          <h3 class="sec-title" style="font-size:1.45rem;margin-bottom:0.4rem;">適合誰</h3>
+          <div class="who">
+            <div class="who-item">
+              <div class="who-ico">01</div>
+              <div>
+                <strong>單點沙龍</strong>
+                <div style="font-size:0.88rem;color:var(--muted);">把店內專業與服務，轉成可持續輸出的內容。</div>
+              </div>
+            </div>
+            <div class="who-item">
+              <div class="who-ico">02</div>
+              <div>
+                <strong>連鎖沙龍</strong>
+                <div style="font-size:0.88rem;color:var(--muted);">用同一套流程，讓多分店一起穩定產內容。</div>
+              </div>
+            </div>
+            <div class="who-item">
+              <div class="who-ico">03</div>
+              <div>
+                <strong>髮品廠商</strong>
+                <div style="font-size:0.88rem;color:var(--muted);">內部訓練與市場推廣，都能用同一套方法。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="wrap">
+      <div class="price-box">
+        <h2 class="sec-title">10 人即可開班，讓全店一起建立內容能力</h2>
+        <div class="tiers">
+          <div class="tier"><span>10 人</span><strong>每位 NT$3,400</strong></div>
+          <div class="tier"><span>11–15 人</span><strong>每位 NT$3,250</strong></div>
+          <div class="tier"><span>16–20 人</span><strong>每位 NT$3,100</strong></div>
+        </div>
+        <p class="includes">含午餐、現場實作、檢核表／模板，以及一個月課後群組陪跑。</p>
+        <a class="cta" href="https://line.me/R/ti/p/@356tfrnj" target="_blank" rel="noopener noreferrer">預約團隊場次 →</a>
+        <p class="cta-note">W.PICKED 官方 LINE｜以上價格均含稅，可開立發票</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="recs" id="recommendations" aria-labelledby="recs-title">
+    <div class="wrap">
+      <p class="eyebrow mono">REAL RECOMMENDATIONS</p>
+      <h2 class="sec-title" id="recs-title">來自現場的推薦</h2>
+      <p class="recs-lead">真實學員與業界夥伴的回饋截圖——不是行銷文案，是現場留下來的聲音。</p>
+      <div class="recs-grid">
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-01.webp" alt="課程推薦截圖 01" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-02.webp" alt="課程推薦截圖 02" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-03.webp" alt="課程推薦截圖 03" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-04.webp" alt="課程推薦截圖 04" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-05.webp" alt="課程推薦截圖 05" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-06.webp" alt="課程推薦截圖 06" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-07.webp" alt="課程推薦截圖 07" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-08.webp" alt="課程推薦截圖 08" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-09.webp" alt="課程推薦截圖 09" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-10.webp" alt="課程推薦截圖 10" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-11.webp" alt="課程推薦截圖 11" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-12.webp" alt="課程推薦截圖 12" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-13.webp" alt="課程推薦截圖 13" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+        <article class="rec-card">
+          <img src="assets/recommendations/rec-14.webp" alt="課程推薦截圖 14" width="540" height="960" loading="lazy" decoding="async" />
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta-block">
+        <h2 id="cta-title">想幫團隊建立內容 SOP？</h2>
+        <p>立刻透過官方 LINE 詢問課程細節與可開班時段。</p>
+        <a class="cta-line" href="https://line.me/R/ti/p/@356tfrnj" target="_blank" rel="noopener noreferrer">課程詢問</a>
+        <p class="cta-line-note">W.PICKED 官方 LINE｜點擊即可開啟對話</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>W. CONTENT LAB</span>
+      <span>不用 IP 也能做流量｜一日團隊實戰班</span>
+    </div>
+  </footer>
+</body>
+</html>
